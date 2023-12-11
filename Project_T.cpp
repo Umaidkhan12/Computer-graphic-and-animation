@@ -31,8 +31,6 @@ int main()
 	stickman(i, maxx - i, maxy, RED);
 
 	delay(100);
-	// cleardevice();
-	// setcolor(WHITE);
     }
 
     delay(900);
@@ -67,9 +65,6 @@ int main()
     stickman(1, 215, maxy, BLUE);
     stickman(1, maxx - 215, maxy, RED);
     message(WHITE, 180, maxy - 40, 0, 0, "Fire ball", "");
-    //setcolor(WHITE);
-    //settextstyle(DEFAULT_FONT, 0, 0);
-    //outtextxy(190, maxy - 40, "Fire ball");
 
     for (i = 200; i <= maxx - 100; i += 8)
     {
