@@ -1,8 +1,8 @@
 #include <graphics.h>
-#include<conio.h>
-#include<dos.h>
+#include <conio.h>
+#include <dos.h>
 
-int maxx, maxy,i;
+int maxx, maxy, i;
 
 int main()
 {
@@ -19,18 +19,20 @@ int main()
 
     for (i = 0; i < maxx / 2 - 100; i += 5)
     {
-	cleardevice();
-	ground(maxx, maxy);
+        cleardevice();
+        ground(maxx, maxy);
 
-	setcolor(WHITE);
-	outtextxy(i - 36, maxy / 2 + 90, "STICKMAN 1");
-	stickman(i, i, maxy, BLUE);
+        setcolor(WHITE);
+        outtextxy(i - 36, maxy / 2 + 90, "STICKMAN 1");
+        stickman(i, i, maxy, BLUE);
 
-	setcolor(WHITE);
-	outtextxy((maxx - i) - 36, maxy / 2 + 90, "STICKMAN 2");
-	stickman(i, maxx - i, maxy, RED);
+        setcolor(WHITE);
+        outtextxy((maxx - i) - 36, maxy / 2 + 90, "STICKMAN 2");
+        stickman(i, maxx - i, maxy, RED);
 
-	delay(100);
+        delay(100);
+        // cleardevice();
+        // setcolor(WHITE);
     }
 
     delay(900);
@@ -65,6 +67,8 @@ int main()
     stickman(1, 215, maxy, BLUE);
     stickman(1, maxx - 215, maxy, RED);
     message(WHITE, 180, maxy - 40, 0, 0, "Fire ball", "");
+    delay(400);
+    cleardevice();
 
     for (i = 200; i <= maxx - 100; i += 8)
     {
@@ -90,18 +94,106 @@ int main()
 	}
     }
 
-    delay(900);
-    cleardevice();
     ground(maxx, maxy);
     stickman(1, 215, maxy, BLUE);
     stickman(1, maxx - 215, maxy, RED);
     message(WHITE, 160, maxy - 40, maxx - 230, maxy - 40, "Hmm.... Not bad", "You...");
+    delay(900);
 
-    // ground(maxx, maxy);
-    // stickman(1, 215, maxy, BLUE);
-    // stickman(1, maxx - 215, maxy, RED);
-    // circle(maxx - 215, maxy - 90, 50);
-    // line(maxx - 265,maxy - 120, maxx - 265,maxy - 50);
+    for (i = 0; i <= 2; i++)
+    {
+	ground(maxx, maxy);
+	stickman(1, 215, maxy, BLUE);
+
+	if (i % 2 == 0)
+	{
+	    setcolor(WHITE);
+	    line(maxx - 205, maxy - 100, maxx - 205, maxy - 80);
+	    line(maxx - 215, maxy - 110, maxx - 215, maxy - 70);
+	    line(maxx - 225, maxy - 100, maxx - 225, maxy - 80);
+	}
+	else
+	{
+	    stickman(1, maxx - 215, maxy, RED);
+	}
+	delay(80);
+	cleardevice();
+    }
+
+    ground(maxx, maxy);
+    stickman(1, 215, maxy, RED);
+    stickman(1, maxx - 215, maxy, BLUE);
+    message(WHITE, 205, maxy - 40, 0, 0, "DIE.", "");
+    delay(300);
+    cleardevice();
+
+    ground(maxx, maxy);
+    stickman(1, 215, maxy, RED);
+    stickman(1, maxx - 215, maxy, BLUE);
+    message(WHITE, 0, 0, maxx - 240, maxy - 40, "", "Huh....!");
+    delay(300);
+    i = maxx - 130;
+    while (i >= maxx - 380)
+    {
+	ground(maxx, maxy);
+	stickman(1, 215, maxy, RED);
+	stickman(1, maxx - 215, maxy, BLUE);
+	setcolor(WHITE);
+	line(maxx - 130, 370, i, 370);
+	i -= 20;
+	delay(10);
+	cleardevice();
+    }
+
+    ground(maxx, maxy);
+    stickman(1, 215, maxy, RED);
+    stickman(1, maxx - 215, maxy, BLUE);
+    message(WHITE, 0, 0, maxx - 280, maxy - 40, "", "Wh-what!?... H-how?");
+    delay(900);
+    cleardevice();
+
+    ground(maxx, maxy);
+    stickman(1, 215, maxy, RED);
+    stickman(1, maxx - 215, maxy, BLUE);
+    message(WHITE, maxx - 235, maxy - 40, 205, maxy - 40, "Imp...", "...");
+    delay(900);
+
+    for (i = 0; i <= 2; i++)
+    {
+	ground(maxx, maxy);
+	stickman(1, 215, maxy, RED);
+
+	if (i % 2 == 0)
+	{
+	    setcolor(WHITE);
+	    line(maxx - 205, maxy - 100, maxx - 205, maxy - 80);
+	    line(maxx - 215, maxy - 110, maxx - 215, maxy - 70);
+	    line(maxx - 225, maxy - 100, maxx - 225, maxy - 80);
+	}
+	else
+	{
+	    stickman(1, maxx - 215, maxy, BLUE);
+	}
+	delay(80);
+	cleardevice();
+    }
+
+    ground(maxx, maxy);
+    stickman(1, 215, maxy, RED);
+    delay(400);
+    cleardevice();
+
+    for (i = 215; i >= 0; i -= 5)
+    {
+	ground(maxx, maxy);
+	stickman(i, i, maxy, RED);
+	delay(100);
+	cleardevice();
+    }
+
+    setcolor(WHITE);
+    settextstyle(BOLD_FONT, 0, 6);
+    outtextxy(maxx / 2 - 80, maxy / 2 - 80, "END");
 
     getch();
     closegraph();
