@@ -2,7 +2,7 @@
 This code is excutable in vs code.
 
 # To run in turbo c++ :
-- Add `#include<conio.h>`and `#include<dos.h>`
+- Add `#include<conio.h>` and `#include<dos.h>`
 - Replace `initgraph(&gd,&gm,NULL)` to `initgraph(&gd,&gm,"PATH OF YOUR BGI DIR")`
 
 # Example :
