@@ -22,3 +22,7 @@ This code is excutable in vs code.
         closegraph();
         return 0; 
     }
+
+# Notice :
+- `Project.cpp` is a file for VS code.
+- You can run `Project_T.cpp` in Turbo C++.
