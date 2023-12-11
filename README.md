@@ -10,7 +10,9 @@ This code is excutable in vs code.
 #include<conio.h>
 #include<dos.h> // Optional(Use for handling interrupts, producing sound, date and time functions, etc)
 
-int main() {
+int main() 
+{
+
     int gd = DETECT, gm;
     initgraph(&gd,&gm,"c:\\turboc3\\bgi")
 
@@ -19,4 +21,5 @@ int main() {
     getch();
     closegraph();
     return 0;
+    
 }
